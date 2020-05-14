@@ -66,6 +66,10 @@ function computeMinSampleSize(scale, pixels) {
 function computeFitCategoryTraits(index, ruler, options) {
 	const thickness = options.barThickness;
 	const count = ruler.stackCount;
+	if (ruler.scale.programValues)
+	{
+		count = ruler.scale.programValues[index];
+	}
 	let size, ratio;
 
 	if (isNullOrUndef(thickness)) {
